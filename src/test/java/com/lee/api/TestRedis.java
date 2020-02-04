@@ -80,7 +80,7 @@ public class TestRedis {
                 "}";
          RestTemplate restTemplate = new RestTemplate();
          String url="http://127.0.0.1:8080/route/add";
-         String result = restTemplate.postForObject(url,JSON.parse(temp),String.class);
-         System.out.println(result);
+         //String result = restTemplate.postForObject(url,JSON.parse(temp),String.class);
+         //System.out.println(result);
      }
 }

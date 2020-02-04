@@ -1,5 +1,5 @@
 <configuration>
-    <property name="LOG_PREFIX" value="secs-logs/api"/>
+    <property name="LOG_PREFIX" value="logs/secs-api"/>
     <appender name="accessLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${LOG_PREFIX}-access-%d{yyyy-MM-dd}.log</fileNamePattern>
