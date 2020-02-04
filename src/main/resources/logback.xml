@@ -1,0 +1,18 @@
+<configuration>
+    <property name="LOG_PREFIX" value="secs-logs/api"/>
+    <appender name="accessLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PREFIX}-access-%d{yyyy-MM-dd}.log</fileNamePattern>
+         </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} -%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="async" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="accessLog"/>
+    </appender>
+
+    <logger name="reactor.netty.http.server.AccessLog" level="INFO" additivity="false">
+        <appender-ref ref="async"/>
+    </logger>
+</configuration>
